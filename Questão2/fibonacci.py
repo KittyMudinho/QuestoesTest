@@ -1,13 +1,19 @@
-def fibonacci(n, a=0, b=1):
-    if n == a or n == b:
+def fibonacci(n):
+    if(n==1):
         return 1
-    elif b > n:
+    elif(n==0):
         return 0
-    return fibonacci(n, b, a + b)
-def numeroDeFibonacci(num):
-    if fibonacci(num):
-        print(f'O número {num} pertence à sequência de Fibonacci.')
-    else:
-        print(f'O número {num} não pertence à sequência de Fibonacci.')
-numero = int(input("Informe um número para verificar se pertence à sequência de Fibonacci: "))
-numeroDeFibonacci(numero)
+    return fibonacci(n-1)+fibonacci(n-2)
+def eFib(n):
+    j=0
+    while True:
+        val=fibonacci(j)
+        j+=1
+        if(n==val):
+            print(f'O número {n} está na sequência de Fibonacci.')
+            break
+        elif (val>n):
+            print(f'O número {n} não está na sequência de Fibonacci.')
+            break
+n=int(input('Escreva um número para saber se ele faz parte da sequência de Fibonacci: '))
+eFib(n)
